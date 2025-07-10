@@ -4,6 +4,7 @@ import { TRPCReactProvider } from "@/trpc/client";
 
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function RootLayout({
         <body
           className={`${inter.className} antialiased`}
         >
+          <Toaster/>
           {children}
         </body>
       </html>
