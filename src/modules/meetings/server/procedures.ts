@@ -102,7 +102,6 @@ export const meetingsRouter = createTRPCRouter({
                                 },
                                 recording: {
                                     mode: "auto-on",
-                                    audio_only: false,
                                     quality: "1080p",
                                 },
                             },
