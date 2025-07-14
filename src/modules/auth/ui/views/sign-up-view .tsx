@@ -62,12 +62,12 @@ export const SignUpView = () => {
         name: data.name,
         email: data.email,
         password: data.password,
-        callbackURL: "/",
+        callbackURL: "/dashboard",
       },
       {
         onSuccess: () => {
           setPending(false);
-          router.push("/");
+          router.push("/dashboard");
         },
         onError: ({error}) => {
           setError(error.message);
@@ -81,7 +81,7 @@ export const SignUpView = () => {
     authClient.signIn.social(
       {
         provider: provider,
-        callbackURL: "/",
+        callbackURL: "/dashboard",
       },
       {
         onSuccess: () => {
@@ -205,8 +205,8 @@ export const SignUpView = () => {
 
 
           <div className="bg-radial from-sidebar-accent to-sidebar relative hidden md:flex flex-col gap-y-4 items-center justify-center">
-            <img src="/logo.svg" alt="MeetAI Logo" className="w-[92px] h-[92px] "/>
-            <p className="text-2xl text-white font-semibold">MeetAI</p>
+            <img src="/logo.svg" alt="ConvoGenius Logo" className="w-[92px] h-[92px] "/>
+            <p className="text-2xl text-white font-semibold">ConvoGenius</p>
           </div>
         </CardContent>
       </Card>

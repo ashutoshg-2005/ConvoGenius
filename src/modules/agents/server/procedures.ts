@@ -1,5 +1,5 @@
 import { db } from "@/db";
-import { agents } from "@/db/schema";
+import { agents, meetings } from "@/db/schema";
 import {createTRPCRouter, protectedProcedure} from "@/trpc/init";
 import { agentsInsertSchema, agentsUpdateSchema } from "../schemas";
 import { z } from "zod";
@@ -57,8 +57,6 @@ export const agentsRouter = createTRPCRouter({
         const [existingAgent] = await db
             .select({
                 ...getTableColumns(agents),
-                meetingCount: sql <number>`5`,
-
             })
             .from(agents)
             .where(
@@ -68,10 +66,20 @@ export const agentsRouter = createTRPCRouter({
                 )
             );
 
-            if (!existingAgent) {
-                throw new TRPCError({ code: "NOT_FOUND", message: "Agent not found" });
-            }
-        return existingAgent;
+        if (!existingAgent) {
+            throw new TRPCError({ code: "NOT_FOUND", message: "Agent not found" });
+        }
+
+        // Count the actual meetings for this agent
+        const [meetingCountResult] = await db
+            .select({ count: count() })
+            .from(meetings)
+            .where(eq(meetings.agentId, input.id));
+
+        return {
+            ...existingAgent,
+            meetingCount: meetingCountResult.count,
+        };
     }),
 
     
@@ -84,19 +92,18 @@ export const agentsRouter = createTRPCRouter({
         const {search, page, pageSize} = input;
         const data = await db
             .select({
-                meetingCount: sql <number>`5`,
                 ...getTableColumns(agents),
-                
-
+                meetingCount: sql<number>`COALESCE(COUNT(${meetings.id}), 0)`,
             })
             .from(agents)
+            .leftJoin(meetings, eq(agents.id, meetings.agentId))
             .where(
                 and(
                     eq(agents.userId, ctx.auth.user.id),
                     search ? ilike(agents.name, `%${search}%`) : undefined,
-
                 )
             )
+            .groupBy(agents.id)
             .orderBy(desc(agents.createdAt), desc(agents.id))
             .limit(pageSize)
             .offset((page - 1) * pageSize);

@@ -12,7 +12,7 @@ import {
     SidebarMenuButton,
 } from "@/components/ui/sidebar";
 import { cn } from "@/lib/utils";
-import { BotIcon, StarIcon, VideoIcon } from "lucide-react";
+import { BotIcon, StarIcon, VideoIcon, LayoutDashboardIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -20,6 +20,11 @@ import { DashboardUserButton } from "./dashboard-user-button";
 
 
 const firstSection = [
+    {
+        icon: LayoutDashboardIcon,
+        label: "Dashboard",
+        href: "/dashboard"
+    },
     {
         icon: VideoIcon,
         label: "Meetings",
@@ -47,9 +52,9 @@ export const DashboardSidebar = () => {
     return ( 
         <Sidebar>
             <SidebarHeader className="text-sidebar-accent-foreground">
-                <Link href= "/" className="flex items-center gap-2 px-2 pt-2">
+                <Link href= "/dashboard" className="flex items-center gap-2 px-2 pt-2">
                 <Image src="/logo.svg" height = {36} width={36} alt="Meet AI" />
-                <p className="text-2xl font-semibold">MEET.AI</p>
+                <p className="text-2xl font-semibold">ConvoGenius</p>
                 </Link>
             </SidebarHeader>
             <div className="px-4 py-2">

@@ -35,7 +35,7 @@ console.log("User data:", data?.user);
          authClient.signOut({
             fetchOptions:{
                 onSuccess: () => {
-                    router.push("/sign-in")
+                    router.push("/")
                 }
             }
         })

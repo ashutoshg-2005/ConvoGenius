@@ -8,7 +8,7 @@ const Page = async () => {
         headers: await headers(),
       });
       if(!!session) {
-        redirect("/");
+        redirect("/dashboard");
       }
     return <SignInView />;
 }

@@ -21,7 +21,6 @@ import{
 } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 
@@ -167,7 +166,7 @@ export const SignInView = () => {
 
 
           <div className="bg-radial from-sidebar-accent to-sidebar relative hidden md:flex flex-col gap-y-4 items-center justify-center">
-            <Image src="/logo.svg" alt="ConvoGenius Logo" className="w-[92px] h-[92px]" width={92} height={92} />
+            <img src="/logo.svg" alt="ConvoGenius Logo" className="w-[92px] h-[92px] "/>
             <p className="text-2xl text-white font-semibold">ConvoGenius</p>
           </div>
         </CardContent>
