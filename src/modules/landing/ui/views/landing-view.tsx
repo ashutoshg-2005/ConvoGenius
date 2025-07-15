@@ -248,7 +248,7 @@ const TestimonialsSection = () => {
   }, [testimonials.length]);
 
   return (
-    <section ref={ref} className="py-20 bg-gradient-to-br from-emerald-50 via-white to-green-50 relative overflow-hidden">
+    <section ref={ref} className="py-20 bg-gradient-to-br from-emerald-50 via-white to-green-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 relative overflow-hidden">
       {/* Floating particles system */}
       <div ref={particleSystemRef} className="absolute inset-0 pointer-events-none"></div>
       
@@ -259,18 +259,18 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <Badge variant="outline" className="mb-6 px-6 py-3 text-lg font-semibold bg-gradient-to-r from-green-100 to-emerald-100 border-green-200">
+          <Badge variant="outline" className="mb-6 px-6 py-3 text-lg font-semibold bg-gradient-to-r from-green-100 to-emerald-100 dark:from-gray-800 dark:to-gray-700 border-green-200 dark:border-gray-600">
             <UsersIcon className="w-5 h-5 mr-3" />
             What Leaders Say
           </Badge>
-          <h2 className="text-5xl md:text-7xl font-bold text-gray-900 mb-8">
+          <h2 className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-gray-100 mb-8">
             Trusted by
             <br />
             <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-green-700 bg-clip-text text-transparent">
               Innovators
             </span>
           </h2>
-          <p className="text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
             Join thousands of forward-thinking teams who&apos;ve revolutionized their meeting culture with ConvoGenius.
           </p>
         </motion.div>
@@ -492,7 +492,7 @@ const HeroSection = () => {
   return (
     <motion.section
       ref={ref}
-      className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-900 via-emerald-800 to-green-950"
+      className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-green-900 via-emerald-800 to-green-950 dark:from-gray-900 dark:via-gray-800 dark:to-green-950"
       style={{ y, opacity }}
     >
       {/* Insane floating particles */}
@@ -536,7 +536,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.2, type: "spring", bounce: 0.4 }}
           className="mb-6"
         >
-          <Badge variant="outline" className="bg-white/10 text-white border-white/20 px-6 py-3 text-base font-medium backdrop-blur-sm">
+          <Badge variant="outline" className="bg-white/10 dark:bg-gray-800/50 text-white dark:text-gray-200 border-white/20 dark:border-gray-600/30 px-6 py-3 text-base font-medium backdrop-blur-sm">
             <SparklesIcon className="w-5 h-5 mr-3" />
             Revolutionary AI Technology
           </Badge>
@@ -544,7 +544,7 @@ const HeroSection = () => {
 
         <h1
           ref={heroTitleRef}
-          className="text-4xl md:text-6xl lg:text-8xl font-bold text-white mb-6 leading-tight"
+          className="text-4xl md:text-6xl lg:text-8xl font-bold text-white dark:text-gray-100 mb-6 leading-tight"
           style={{ perspective: '1000px' }}
         >
           ConvoGenius
@@ -556,7 +556,7 @@ const HeroSection = () => {
 
         <p
           ref={heroSubtitleRef}
-          className="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed font-light"
+          className="text-lg md:text-xl text-gray-300 dark:text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed font-light"
         >
           Transform conversations into intelligent insights with AI that understands, learns, and evolves.
         </p>
@@ -914,7 +914,7 @@ const FeaturesSection = () => {
       <div ref={particleContainerRef} className="absolute inset-0 pointer-events-none"></div>
       
       {/* Morphing background overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-green-50/80 to-emerald-50/80 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-green-50/80 to-emerald-50/80 dark:from-gray-900/80 dark:via-gray-800/80 dark:to-green-950/80 backdrop-blur-sm"></div>
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
@@ -928,19 +928,19 @@ const FeaturesSection = () => {
             animate={isInView ? { scale: 1 } : {}}
             transition={{ duration: 0.6, type: "spring", bounce: 0.4 }}
           >
-            <Badge variant="outline" className="mb-6 px-6 py-3 text-lg font-semibold bg-gradient-to-r from-green-100 to-emerald-100 border-green-200">
+            <Badge variant="outline" className="mb-6 px-6 py-3 text-lg font-semibold bg-gradient-to-r from-green-100 to-emerald-100 dark:from-gray-800 dark:to-gray-700 border-green-200 dark:border-gray-600">
               <SparklesIcon className="w-5 h-5 mr-3" />
               Next-Generation Features
             </Badge>
           </motion.div>
           <h2 
             ref={titleRef}
-            className="text-5xl md:text-7xl font-bold text-gray-900 mb-8"
+            className="text-5xl md:text-7xl font-bold text-gray-900 dark:text-gray-100 mb-8"
             style={{ perspective: '1000px' }}
           >
             Intelligence Redefined
           </h2>
-          <p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-2xl text-gray-600 dark:text-gray-400 max-w-4xl mx-auto leading-relaxed">
             Discover how artificial intelligence can amplify human potential and transform the way teams collaborate, decide, and innovate.
           </p>
         </motion.div>
@@ -958,7 +958,7 @@ const FeaturesSection = () => {
                 className="cursor-pointer"
                 style={{ transformStyle: 'preserve-3d' }}
               >
-                <Card className="p-10 h-full border-0 bg-gradient-to-br from-white via-gray-50 to-white shadow-xl hover:shadow-2xl transition-all duration-500 backdrop-blur-sm relative overflow-hidden">
+                <Card className="p-10 h-full border-0 bg-gradient-to-br from-white via-gray-50 to-white dark:from-gray-800 dark:via-gray-700 dark:to-gray-800 shadow-xl hover:shadow-2xl transition-all duration-500 backdrop-blur-sm relative overflow-hidden">
                   <CardContent className="p-0 relative z-10">
                     <motion.div 
                       className={`w-20 h-20 rounded-3xl bg-gradient-to-r ${feature.color} mb-8 flex items-center justify-center shadow-lg relative`}
@@ -968,8 +968,8 @@ const FeaturesSection = () => {
                       <feature.icon className="w-10 h-10 text-white" />
                       <div className="absolute inset-0 bg-white/20 rounded-3xl animate-pulse"></div>
                     </motion.div>
-                    <h3 className="text-3xl font-bold text-gray-900 mb-6">{feature.title}</h3>
-                    <p className="text-gray-600 leading-relaxed text-lg">{feature.description}</p>
+                    <h3 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-6">{feature.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-lg">{feature.description}</p>
                   </CardContent>
                   
                   {/* Animated border */}
@@ -1031,52 +1031,51 @@ const CapabilitiesSection = () => {
   );
 
   return (
-    <section ref={ref} className="py-32 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 overflow-hidden">
+    <section ref={ref} className="py-32 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 dark:from-gray-950 dark:via-gray-900 dark:to-gray-800 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <animated.div style={titleSpring} className="text-center mb-20">
-          <Badge variant="outline" className="bg-white/10 text-white border-white/20 mb-6 px-6 py-3 text-lg font-semibold">
+          <Badge variant="outline" className="bg-white/10 dark:bg-gray-800/50 text-white dark:text-gray-200 border-white/20 dark:border-gray-600/30 mb-6 px-6 py-3 text-lg font-semibold">
             <GlobeIcon className="w-5 h-5 mr-3" />
             Advanced Capabilities
           </Badge>
-          <h2 className="text-5xl md:text-7xl font-bold text-white mb-8">
+          <h2 className="text-5xl md:text-7xl font-bold text-white dark:text-gray-100 mb-8">
             Beyond
             <br />
             <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
               Imagination
             </span>
           </h2>
-          <p className="text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-2xl text-gray-300 dark:text-gray-400 max-w-4xl mx-auto leading-relaxed">
             Explore the cutting-edge capabilities that set ConvoGenius apart in the realm of conversational AI.
           </p>
         </animated.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {capabilities.map((capability, capabilityIndex) => (
-            <animated.div key={capability.title} style={cardSprings[capabilityIndex]}>
-              <motion.div
-                className={`p-8 rounded-3xl border transition-all duration-500 cursor-pointer ${
-                  activeCapability === capabilityIndex 
-                    ? 'bg-white/10 border-white/30 shadow-2xl' 
-                    : 'bg-white/5 border-white/10 hover:bg-white/10'
-                }`}
-                onMouseEnter={() => setActiveCapability(capabilityIndex)}
-                whileHover={{ scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              >
-                <motion.div 
-                  className="w-16 h-16 rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 mb-6 flex items-center justify-center"
-                  whileHover={{ rotate: 180 }}
-                  transition={{ duration: 0.6 }}
+            <animated.div key={capability.title} style={cardSprings[capabilityIndex]}>                <motion.div
+                  className={`p-8 rounded-3xl border transition-all duration-500 cursor-pointer ${
+                    activeCapability === capabilityIndex 
+                      ? 'bg-white/10 dark:bg-gray-700/50 border-white/30 dark:border-gray-500/50 shadow-2xl' 
+                      : 'bg-white/5 dark:bg-gray-800/30 border-white/10 dark:border-gray-600/30 hover:bg-white/10 dark:hover:bg-gray-700/50'
+                  }`}
+                  onMouseEnter={() => setActiveCapability(capabilityIndex)}
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
-                  <capability.icon className="w-8 h-8 text-white" />
-                </motion.div>
-                <h3 className="text-2xl font-bold text-white mb-4">{capability.title}</h3>
-                <p className="text-gray-300 leading-relaxed mb-6">{capability.description}</p>
+                  <motion.div 
+                    className="w-16 h-16 rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 mb-6 flex items-center justify-center"
+                    whileHover={{ rotate: 180 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <capability.icon className="w-8 h-8 text-white" />
+                  </motion.div>
+                  <h3 className="text-2xl font-bold text-white dark:text-gray-200 mb-4">{capability.title}</h3>
+                  <p className="text-gray-300 dark:text-gray-400 leading-relaxed mb-6">{capability.description}</p>
                 <ul className="space-y-3">
                   {capability.features.map((feature, featureIndex) => (
                     <motion.li 
                       key={feature}
-                      className="flex items-center text-gray-400"
+                      className="flex items-center text-gray-400 dark:text-gray-500"
                       initial={{ opacity: 0, x: -20 }}
                       animate={activeCapability === capabilityIndex ? { opacity: 1, x: 0 } : { opacity: 0.6, x: -10 }}
                       transition={{ delay: featureIndex * 0.1 }}
@@ -1103,21 +1102,21 @@ const CTASection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-16 bg-gradient-to-br from-green-900 via-emerald-900 to-gray-900">
+    <section ref={ref} className="py-16 bg-gradient-to-br from-green-900 via-emerald-900 to-gray-900 dark:from-gray-950 dark:via-gray-900 dark:to-gray-800">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-white dark:text-gray-100 mb-6">
             Ready to Transform
             <br />
             <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
               Your Meetings?
             </span>
           </h2>
-          <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 dark:text-gray-400 mb-10 max-w-2xl mx-auto">
             Join thousands of teams already using ConvoGenius to make their meetings more productive, 
             engaging, and actionable.
           </p>
@@ -1129,13 +1128,13 @@ const CTASection = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <Link href="/sign-up">
-              <Button size="lg" className="bg-white text-black hover:bg-gray-100 px-8 py-4 text-lg font-semibold rounded-xl">
+              <Button size="lg" className="bg-white text-black hover:bg-gray-100 dark:bg-gray-200 dark:text-gray-900 dark:hover:bg-gray-300 px-8 py-4 text-lg font-semibold rounded-xl">
                 Start Your Free Trial
                 <ArrowRightIcon className="w-5 h-5 ml-2" />
               </Button>
             </Link>
             <Link href="/sign-in">
-              <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold rounded-xl">
+              <Button variant="outline" size="lg" className="border-white/20 dark:border-gray-600 text-white dark:text-gray-100 hover:bg-white/10 dark:hover:bg-gray-700 px-8 py-4 text-lg font-semibold rounded-xl">
                 Sign In
               </Button>
             </Link>
@@ -1145,7 +1144,7 @@ const CTASection = () => {
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-sm text-gray-400 mt-6"
+            className="text-sm text-gray-400 dark:text-gray-500 mt-6"
           >
             No credit card required • 14-day free trial • Cancel anytime
           </motion.p>
@@ -1168,13 +1167,13 @@ export const LandingView = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Navigation */}
       <motion.nav
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10"
+        className="fixed top-0 left-0 right-0 z-50 bg-black/80 dark:bg-gray-900/90 backdrop-blur-md border-b border-white/10 dark:border-gray-700/50"
       >
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex items-center justify-between h-16">
@@ -1184,20 +1183,20 @@ export const LandingView = () => {
             </Link>
             
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#features" className="text-gray-300 hover:text-white transition-colors">Features</a>
-              <a href="#capabilities" className="text-gray-300 hover:text-white transition-colors">Capabilities</a>
-              <a href="#testimonials" className="text-gray-300 hover:text-white transition-colors">Reviews</a>
-              <a href="#faq" className="text-gray-300 hover:text-white transition-colors">FAQ</a>
+              <a href="#features" className="text-gray-300 dark:text-gray-400 hover:text-white dark:hover:text-gray-200 transition-colors">Features</a>
+              <a href="#capabilities" className="text-gray-300 dark:text-gray-400 hover:text-white dark:hover:text-gray-200 transition-colors">Capabilities</a>
+              <a href="#testimonials" className="text-gray-300 dark:text-gray-400 hover:text-white dark:hover:text-gray-200 transition-colors">Reviews</a>
+              <a href="#faq" className="text-gray-300 dark:text-gray-400 hover:text-white dark:hover:text-gray-200 transition-colors">FAQ</a>
             </div>
 
             <div className="flex items-center space-x-4">
               <Link href="/sign-in">
-                <Button variant="ghost" className="text-white hover:bg-white/10">
+                <Button variant="ghost" className="text-white dark:text-gray-200 hover:bg-white/10 dark:hover:bg-gray-700/50">
                   Sign In
                 </Button>
               </Link>
               <Link href="/sign-up">
-                <Button className="bg-white text-black hover:bg-gray-100">
+                <Button className="bg-white text-black hover:bg-gray-100 dark:bg-gray-200 dark:text-gray-900 dark:hover:bg-gray-300">
                   Get Started
                 </Button>
               </Link>
@@ -1224,18 +1223,18 @@ export const LandingView = () => {
       <CTASection />
 
       {/* Footer */}
-      <footer className="bg-gray-900 py-12">
+      <footer className="bg-gray-900 dark:bg-gray-950 py-12">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
               <Image src="/logo.svg" alt="ConvoGenius" width={24} height={24} />
-              <span className="text-lg font-bold text-white">ConvoGenius</span>
+              <span className="text-lg font-bold text-white dark:text-gray-200">ConvoGenius</span>
             </div>
             
-            <div className="flex items-center space-x-6 text-sm text-gray-400">
-              <a href="#" className="hover:text-white transition-colors">Privacy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms</a>
-              <a href="#" className="hover:text-white transition-colors">Support</a>
+            <div className="flex items-center space-x-6 text-sm text-gray-400 dark:text-gray-500">
+              <a href="#" className="hover:text-white dark:hover:text-gray-300 transition-colors">Privacy</a>
+              <a href="#" className="hover:text-white dark:hover:text-gray-300 transition-colors">Terms</a>
+              <a href="#" className="hover:text-white dark:hover:text-gray-300 transition-colors">Support</a>
               <span>© 2025 ConvoGenius. All rights reserved.</span>
             </div>
           </div>

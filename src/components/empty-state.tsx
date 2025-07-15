@@ -15,8 +15,8 @@ export const EmptyState = ({
             <div className="flex flex-col items-center gap-6 text-center max-w-md">
                 <Image src={image} alt="Empty" width={240} height={240} />
                 <div className="flex flex-col gap-y-2">
-                    <h6 className="text-lg font-medium">{title}</h6>
-                    <p className="text-sm text-muted-foreground">{description}</p>
+                    <h6 className="text-lg font-medium text-gray-900 dark:text-gray-100">{title}</h6>
+                    <p className="text-sm text-muted-foreground dark:text-gray-400">{description}</p>
                 </div>
             </div>
         </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { TRPCReactProvider } from "@/trpc/client";
+import { ThemeProvider } from "next-themes";
 
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -23,12 +24,19 @@ export default function RootLayout({
   return ( 
     <NuqsAdapter>
       <TRPCReactProvider>
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
           <body
             className={`${inter.className} antialiased`}
           >
-            <Toaster/>
-            {children}
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="dark"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <Toaster/>
+              {children}
+            </ThemeProvider>
           </body>
         </html>
       </TRPCReactProvider>

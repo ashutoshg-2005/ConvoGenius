@@ -23,6 +23,7 @@ import { useForm } from "react-hook-form";
 import {FaGoogle, FaGithub} from "react-icons/fa";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 
@@ -95,16 +96,16 @@ export const SignUpView = () => {
   };
   return (
     <div className="flex flex-col gap-6">
-      <Card className="overflow-hidden p-0">
+      <Card className="overflow-hidden p-0 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
         <CardContent className="grid p-0 md:grid-cols-2">
           <Form{...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="p-6 md:p-8">
               <div className="flex flex-col gap-6">
                 <div className="flex flex-col item-center text-center">
-                  <h1 className="text-2xl font-bold">
+                  <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
                     Let us get you started
                   </h1>
-                  <p className="text-muted-foreground text-balance">
+                  <p className="text-muted-foreground dark:text-gray-400 text-balance">
                     Create your account
                   </p>
                 </div>
@@ -114,9 +115,9 @@ export const SignUpView = () => {
                       name="name"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Name</FormLabel>
+                          <FormLabel className="text-gray-900 dark:text-gray-100">Name</FormLabel>
                           <FormControl>
-                            <Input type="name" placeholder="John Doe" {...field} />
+                            <Input type="name" placeholder="John Doe" {...field} className="border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -128,9 +129,9 @@ export const SignUpView = () => {
                       name="email"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Email</FormLabel>
+                          <FormLabel className="text-gray-900 dark:text-gray-100">Email</FormLabel>
                           <FormControl>
-                            <Input type="email" placeholder="something@gmail.com" {...field} />
+                            <Input type="email" placeholder="something@gmail.com" {...field} className="border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -142,9 +143,9 @@ export const SignUpView = () => {
                     name="password"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Password</FormLabel>
+                        <FormLabel className="text-gray-900 dark:text-gray-100">Password</FormLabel>
                         <FormControl>
-                          <Input type="password" placeholder="Enter your password" {...field} />
+                          <Input type="password" placeholder="Enter your password" {...field} className="border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -156,9 +157,9 @@ export const SignUpView = () => {
                     name="confirmPassword"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Confirm Password</FormLabel>
+                        <FormLabel className="text-gray-900 dark:text-gray-100">Confirm Password</FormLabel>
                         <FormControl>
-                          <Input type="password" placeholder="Enter your password" {...field} />
+                          <Input type="password" placeholder="Enter your password" {...field} className="border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -176,16 +177,16 @@ export const SignUpView = () => {
                 <Button className="w-full" type="submit" disabled={pending}>
                   Sign In
                 </Button>
-                <div className="after:border-border relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
-                  <span className="bg-card text-muted-foreground relative z-10 px-2">
+                <div className="after:border-border dark:after:border-gray-600 relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t">
+                  <span className="bg-card dark:bg-gray-800 text-muted-foreground dark:text-gray-400 relative z-10 px-2">
                     Or continue with
                   </span>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
-                  <Button disabled={pending} type="button" variant="outline" className="w-full"onClick={() => onSocial("google")}>
+                  <Button disabled={pending} type="button" variant="outline" className="w-full border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700"onClick={() => onSocial("google")}>
                     <FaGoogle/>
                   </Button>
-                  <Button disabled={pending} type="button" variant="outline" className="w-full"onClick={() => {
+                  <Button disabled={pending} type="button" variant="outline" className="w-full border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-700"onClick={() => {
                     authClient.signIn.social({
                       provider: "github",
                     })
@@ -193,9 +194,9 @@ export const SignUpView = () => {
                     <FaGithub/>
                   </Button>
                 </div>
-                <div className="text-center text-sm text-muted-foreground">
+                <div className="text-center text-sm text-muted-foreground dark:text-gray-400">
                   Don&apos;t have an account? {" "}
-                  <Link href={"/sign-in"} className="text-primary underline underline-offset-4">
+                  <Link href={"/sign-in"} className="text-primary dark:text-blue-400 underline underline-offset-4">
                    Sign-In
                   </Link>
                 </div>
@@ -204,9 +205,9 @@ export const SignUpView = () => {
           </Form>
 
 
-          <div className="bg-radial from-sidebar-accent to-sidebar relative hidden md:flex flex-col gap-y-4 items-center justify-center">
-            <img src="/logo.svg" alt="ConvoGenius Logo" className="w-[92px] h-[92px] "/>
-            <p className="text-2xl text-white font-semibold">ConvoGenius</p>
+          <div className="bg-radial from-sidebar-accent to-sidebar dark:from-gray-700 dark:to-gray-900 relative hidden md:flex flex-col gap-y-4 items-center justify-center">
+            <Image src="/logo.svg" alt="ConvoGenius Logo" className="w-[92px] h-[92px]" width={92} height={92} />
+            <p className="text-2xl text-white dark:text-gray-200 font-semibold">ConvoGenius</p>
           </div>
         </CardContent>
       </Card>
