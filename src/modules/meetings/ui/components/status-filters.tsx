@@ -8,8 +8,8 @@ const options = [
         id: MeetingStatus.Upcoming,
         value: MeetingStatus.Upcoming,
         children: (
-            <div className="flex items-center gap-x-2 capitalize">
-                <ClockArrowUpIcon />
+            <div className="flex items-center gap-x-2 capitalize text-gray-900 dark:text-gray-100">
+                <ClockArrowUpIcon className="text-gray-600 dark:text-gray-400" />
                 {MeetingStatus.Upcoming}
             </div>
         )
@@ -18,8 +18,8 @@ const options = [
         id: MeetingStatus.Completed,
         value: MeetingStatus.Completed,
         children: (
-            <div className="flex items-center gap-x-2 capitalize">
-                <CircleCheckIcon />
+            <div className="flex items-center gap-x-2 capitalize text-gray-900 dark:text-gray-100">
+                <CircleCheckIcon className="text-gray-600 dark:text-gray-400" />
                 {MeetingStatus.Completed}
             </div>
         )
@@ -28,8 +28,8 @@ const options = [
         id: MeetingStatus.Active,
         value: MeetingStatus.Active,
         children: (
-            <div className="flex items-center gap-x-2 capitalize">
-                <VideoIcon />
+            <div className="flex items-center gap-x-2 capitalize text-gray-900 dark:text-gray-100">
+                <VideoIcon className="text-gray-600 dark:text-gray-400" />
                 {MeetingStatus.Active}
             </div>
         )
@@ -38,8 +38,8 @@ const options = [
         id: MeetingStatus.Processing,
         value: MeetingStatus.Processing,
         children: (
-            <div className="flex items-center gap-x-2 capitalize">
-                <LoaderIcon />
+            <div className="flex items-center gap-x-2 capitalize text-gray-900 dark:text-gray-100">
+                <LoaderIcon className="text-gray-600 dark:text-gray-400" />
                 {MeetingStatus.Processing}
             </div>
         )
@@ -48,8 +48,8 @@ const options = [
         id: MeetingStatus.Cancelled,
         value: MeetingStatus.Cancelled,
         children: (
-            <div className="flex items-center gap-x-2 capitalize">
-                <CircleXIcon />
+            <div className="flex items-center gap-x-2 capitalize text-gray-900 dark:text-gray-100">
+                <CircleXIcon className="text-gray-600 dark:text-gray-400" />
                 {MeetingStatus.Cancelled}
             </div>
         )

@@ -29,8 +29,8 @@ export const MeetingsListHeader = () => {
       <NewMeetingDialog open={isDialogOpen} onOpenChange={setIsDialogOpen} />
         <div className="py-4 px-4 md:px-8 flex flex-col gap-y-2">
           <div className="flex items-center justify-between">
-                  <h5 className="font-medium text-xl">My Meetings</h5>
-                  <Button onClick={() => setIsDialogOpen(true)} >
+                  <h5 className="font-medium text-xl text-gray-900 dark:text-gray-100">My Meetings</h5>
+                  <Button onClick={() => setIsDialogOpen(true)} className="bg-blue-600 hover:bg-blue-700 text-white">
                       <PlusIcon/>
                       New Meetings
                   </Button>
@@ -41,9 +41,9 @@ export const MeetingsListHeader = () => {
               <StatusFilters />
               <AgentIdFilter />
               {isAnyFilterModified && (
-                <Button variant="outline" onClick={onClearFilters}>
-                  <XCircleIcon className="size-4" />
-                  Clear Filters
+                <Button variant="outline" onClick={onClearFilters} className="border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700">
+                  <XCircleIcon className="size-4 text-gray-600 dark:text-gray-400" />
+                  <span className="text-gray-900 dark:text-gray-100">Clear Filters</span>
                 </Button>
               )}
             </div>

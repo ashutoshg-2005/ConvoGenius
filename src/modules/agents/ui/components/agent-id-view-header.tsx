@@ -33,17 +33,17 @@ export const AgentIdHeader = ({
             <Breadcrumb >
                 <BreadcrumbList>
                     <BreadcrumbItem>
-                        <BreadcrumbLink asChild className="font-md text-xl">
+                        <BreadcrumbLink asChild className="font-md text-xl text-gray-900 dark:text-gray-100">
                             <Link href="/agents">
                                 My Agents
                             </Link>
                         </BreadcrumbLink>
                     </BreadcrumbItem>
-                    <BreadcrumbSeparator className="text-foreground text-xl font-medium [$>svg]:size-4" >
+                    <BreadcrumbSeparator className="text-gray-900 dark:text-gray-100 text-xl font-medium [$>svg]:size-4" >
                         <ChevronsRightIcon />
                     </BreadcrumbSeparator>
                     <BreadcrumbItem>
-                        <BreadcrumbLink asChild className="font-md text-xl text-foreground">
+                        <BreadcrumbLink asChild className="font-md text-xl text-gray-900 dark:text-gray-100">
                             <Link href={`/agents/${agentId}`}>
                                 {agentName}
                             </Link>
@@ -53,17 +53,17 @@ export const AgentIdHeader = ({
             </Breadcrumb>
             <DropdownMenu modal = {false}>
                 <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" size="icon" className="w-8 h-8">
+                    <Button variant="ghost" size="icon" className="w-8 h-8 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800">
                         <MoreVerticalIcon className="size-4" />
                     </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align = "end">
-                    <DropdownMenuItem onClick={onEdit}>
-                        <PencilIcon className="size-4 text-black" />
+                <DropdownMenuContent align = "end" className="bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                    <DropdownMenuItem onClick={onEdit} className="text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <PencilIcon className="size-4 text-gray-600 dark:text-gray-400" />
                             Edit Agent
                     </DropdownMenuItem>
-                    <DropdownMenuItem onClick={onRemove}>
-                        <TrashIcon className="size-4 text-red-500" />
+                    <DropdownMenuItem onClick={onRemove} className="text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <TrashIcon className="size-4 text-red-500 dark:text-red-400" />
                             Delete Agent
                     </DropdownMenuItem>
                 </DropdownMenuContent>

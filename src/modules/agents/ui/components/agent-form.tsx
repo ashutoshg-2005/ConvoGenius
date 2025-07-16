@@ -90,18 +90,19 @@ export const AgentForm = ({ onSuccess, onCancel, initialValues }: AgentFormProps
                 <GeneratedAvatar
                     seed = {form.watch("name")}
                     variant = "botttsNeutral"
-                    className="border size-16"
+                    className="border border-gray-300 dark:border-gray-600 size-16"
                 />
                 <FormField
                     name = "name"
                     control={form.control}
                     render = {({ field }) => (
                         <FormItem>
-                            <FormLabel>Name</FormLabel>
+                            <FormLabel className="text-gray-900 dark:text-gray-100">Name</FormLabel>
                             <FormControl>
                                 <input
                                     {...field}
                                     placeholder="Agent Name"
+                                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 />
                             </FormControl>
                             <FormMessage />
@@ -114,11 +115,12 @@ export const AgentForm = ({ onSuccess, onCancel, initialValues }: AgentFormProps
                     control={form.control}
                     render = {({ field }) => (
                         <FormItem>
-                            <FormLabel>Instructions</FormLabel>
+                            <FormLabel className="text-gray-900 dark:text-gray-100">Instructions</FormLabel>
                             <FormControl>
                                 <textarea
                                     {...field}
                                     placeholder="What should the agent do?"
+                                    className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 min-h-[80px] resize-vertical"
                                 />
                             </FormControl>
                             <FormMessage />
@@ -133,11 +135,12 @@ export const AgentForm = ({ onSuccess, onCancel, initialValues }: AgentFormProps
                             type="button"
                             onClick={() => onCancel()}
                             disabled={isPending}
+                            className="text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800"
                         >
                             Cancel
                         </Button>
                     )}
-                    <Button disabled={isPending} type="submit">
+                    <Button disabled={isPending} type="submit" className="bg-blue-600 hover:bg-blue-700 text-white">
                         {isEdit ? "Update Agent" : "Create Agent"}
                     </Button>
                 </div>

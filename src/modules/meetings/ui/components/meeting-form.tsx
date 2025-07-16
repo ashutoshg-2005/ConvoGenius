@@ -109,11 +109,12 @@ export const MeetingForm = ({
                         control={form.control}
                         render = {({ field }) => (
                             <FormItem>
-                                <FormLabel>Name</FormLabel>
+                                <FormLabel className="text-gray-900 dark:text-gray-100">Name</FormLabel>
                                 <FormControl>
                                     <input
                                         {...field}
                                         placeholder="Eg: Math Tutor"
+                                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     />
                                 </FormControl>
                                 <FormMessage />
@@ -126,18 +127,18 @@ export const MeetingForm = ({
                         control={form.control}
                         render = {({ field }) => (
                             <FormItem>
-                                <FormLabel>Agent</FormLabel>
+                                <FormLabel className="text-gray-900 dark:text-gray-100">Agent</FormLabel>
                                 <FormControl>
                                     <CommandSelect
                                         options = {(agents.data?.items??[]) .map((agent) => ({
                                             id: agent.id,
                                             value: agent.id,
                                             children: (
-                                                <div className="flex items-center gap-x-2">
+                                                <div className="flex items-center gap-x-2 text-gray-900 dark:text-gray-100">
                                                     <GeneratedAvatar
                                                         seed = {agent.name}
                                                         variant = "botttsNeutral"
-                                                        className="border size-6"
+                                                        className="border border-gray-300 dark:border-gray-600 size-6"
                                                     />
                                                     <span>{agent.name}</span>
                                                 </div>
@@ -149,11 +150,11 @@ export const MeetingForm = ({
                                         placeholder="Select an agent"
                                     />
                                 </FormControl>
-                                <FormDescription>
+                                <FormDescription className="text-gray-600 dark:text-gray-400">
                                     Not found what you are looking for?{" "}
                                     <button
                                         type="button"
-                                        className="text-primary hover:underline"
+                                        className="text-blue-600 dark:text-blue-400 hover:underline"
                                         onClick={() => setOpenNewAgentDialog(true)}
                                     >
                                         Create a new agent
@@ -172,11 +173,12 @@ export const MeetingForm = ({
                                 type="button"
                                 onClick={() => onCancel()}
                                 disabled={isPending}
+                                className="text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800"
                             >
                                 Cancel
                             </Button>
                         )}
-                        <Button disabled={isPending} type="submit">
+                        <Button disabled={isPending} type="submit" className="bg-blue-600 hover:bg-blue-700 text-white">
                             {isEdit ? "Update Meeting" : "Create Meeting"}
                         </Button>
                     </div>

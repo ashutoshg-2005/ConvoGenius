@@ -60,7 +60,7 @@ export const AgentIdView = ({agentId}:Props) => {
                     onEdit={() => setUpdateAgentDialogOpen(true)}
                     onRemove={handleRemoveAgent}
                 />
-                <div className="bg-white rounded-lg border">
+                <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
                     <div className="px-4 py-5 gap-y-5 flex flex-col col-span-5">
                         <div className="flex items-center gap-x-3">
                             <GeneratedAvatar
@@ -68,22 +68,22 @@ export const AgentIdView = ({agentId}:Props) => {
                                 seed = {data.name}
                                 className="size-10"
                             />
-                            <h2 className="text-2xl font-medium">
+                            <h2 className="text-2xl font-medium text-gray-900 dark:text-gray-100">
                                 {data.name}
                             </h2>
                         </div>
                         <Badge
                             variant = "outline"
-                            className="flex items-center gap-x-2 [&>svg]:size-4"
+                            className="flex items-center gap-x-2 [&>svg]:size-4 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100"
                         >
-                            <VideoIcon className="text-blue-700"/>
+                            <VideoIcon className="text-blue-700 dark:text-blue-400"/>
                             {data.meetingCount}{data.meetingCount === 1 ? " meeting" : " meetings"}
                         </Badge>
                         <div className="flex flex-col gap-y-4">
-                            <p className="text-lg font-medium ">
+                            <p className="text-lg font-medium text-gray-900 dark:text-gray-100">
                                 Instructions
                             </p>
-                            <p className="text-neutral-800">
+                            <p className="text-gray-800 dark:text-gray-300">
                                 {data.instructions}
                             </p>
                         </div>

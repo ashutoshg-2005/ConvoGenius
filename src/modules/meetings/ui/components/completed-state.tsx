@@ -19,33 +19,33 @@ export const CompletedState = ({ data }: Props) => {
     return (
         <div className="flex flex-col gap-y-4">
             <Tabs defaultValue="summary">
-                <div className="bg-white rounded-lg border px-3">
+                <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 px-3">
                     <ScrollArea>
-                        <TabsList className="p-0 bg-background justify-start rounded-none h-13">
+                        <TabsList className="p-0 bg-transparent dark:bg-transparent justify-start rounded-none h-13">
                             <TabsTrigger
                              value="summary"
-                             className="text-muted-foreground rounded-none bg-background data-[state=active]:shadow-none border-b-2 border-transparent data-[state=active]:border-b-primary data-[state=active]:text-accent-foreground h-full hover:text-accent-foreground"
+                             className="text-gray-600 dark:text-gray-400 rounded-none bg-transparent data-[state=active]:shadow-none border-b-2 border-transparent data-[state=active]:border-b-blue-600 data-[state=active]:text-gray-900 dark:data-[state=active]:text-gray-100 h-full hover:text-gray-900 dark:hover:text-gray-100"
                             >
                                 <BookOpenTextIcon />
                                 Summary
                             </TabsTrigger>
                             <TabsTrigger
                              value="transcript"
-                             className="text-muted-foreground rounded-none bg-background data-[state=active]:shadow-none border-b-2 border-transparent data-[state=active]:border-b-primary data-[state=active]:text-accent-foreground h-full hover:text-accent-foreground"
+                             className="text-gray-600 dark:text-gray-400 rounded-none bg-transparent data-[state=active]:shadow-none border-b-2 border-transparent data-[state=active]:border-b-blue-600 data-[state=active]:text-gray-900 dark:data-[state=active]:text-gray-100 h-full hover:text-gray-900 dark:hover:text-gray-100"
                             >
                                 <FileTextIcon />
                                 Transcript
                             </TabsTrigger>
                             <TabsTrigger
                              value="recording"
-                             className="text-muted-foreground rounded-none bg-background data-[state=active]:shadow-none border-b-2 border-transparent data-[state=active]:border-b-primary data-[state=active]:text-accent-foreground h-full hover:text-accent-foreground"
+                             className="text-gray-600 dark:text-gray-400 rounded-none bg-transparent data-[state=active]:shadow-none border-b-2 border-transparent data-[state=active]:border-b-blue-600 data-[state=active]:text-gray-900 dark:data-[state=active]:text-gray-100 h-full hover:text-gray-900 dark:hover:text-gray-100"
                             >
                                 <FileTextIcon />
                                 Recording
                             </TabsTrigger>
                             <TabsTrigger
                              value="chat"
-                             className="text-muted-foreground rounded-none bg-background data-[state=active]:shadow-none border-b-2 border-transparent data-[state=active]:border-b-primary data-[state=active]:text-accent-foreground h-full hover:text-accent-foreground"
+                             className="text-gray-600 dark:text-gray-400 rounded-none bg-transparent data-[state=active]:shadow-none border-b-2 border-transparent data-[state=active]:border-b-blue-600 data-[state=active]:text-gray-900 dark:data-[state=active]:text-gray-100 h-full hover:text-gray-900 dark:hover:text-gray-100"
                             >
                                 <SparklesIcon />
                                 Ask AI
@@ -69,13 +69,13 @@ export const CompletedState = ({ data }: Props) => {
                     </div>
                 </TabsContent>
                 <TabsContent value="summary">
-                    <div className="bg-white rounded-lg border">
+                    <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
                         <div className="px-4 py-5 gap-y-4 flex flex-col col-span-5">
-                            <h2 className="text-2xl font-medium capitalize">{data.name}</h2>
+                            <h2 className="text-2xl font-medium capitalize text-gray-900 dark:text-gray-100">{data.name}</h2>
                             <div className="flex gap-x-2 items-center">
                                 <Link 
                                     href={`/agents/${data.agent.id}`}
-                                    className="flex items-center gap-x-2 underline underline-offset-4 capitalize"
+                                    className="flex items-center gap-x-2 underline underline-offset-4 capitalize text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300"
                                 >
                                     <GeneratedAvatar 
                                         variant="botttsNeutral"
@@ -84,17 +84,17 @@ export const CompletedState = ({ data }: Props) => {
                                     />
                                     {data.agent.name}
                                 </Link>{" "}
-                                <p>{data.startedAt ? format(data.startedAt, "PPP"): ""}</p>
+                                <p className="text-gray-600 dark:text-gray-400">{data.startedAt ? format(data.startedAt, "PPP"): ""}</p>
                             </div>
                             <div className="flex gap-x-2 items-center">
-                                <SparklesIcon className="size-4"/>
-                                <p>General Summary</p>
+                                <SparklesIcon className="size-4 text-gray-600 dark:text-gray-400"/>
+                                <p className="text-gray-900 dark:text-gray-100">General Summary</p>
                             </div>
                             <Badge
-                                className="flex items-center gap-x-2 [&>svg]:size-4"
+                                className="flex items-center gap-x-2 [&>svg]:size-4 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-gray-100"
                                 variant="outline"
                             >
-                                <ClockFadingIcon className="text-blue-700"/>
+                                <ClockFadingIcon className="text-blue-700 dark:text-blue-400"/>
                                 {data.duration ? formatDuration(data.duration) : "No Duration"}
                             </Badge>
                             <div>
